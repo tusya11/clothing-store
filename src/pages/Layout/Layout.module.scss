@@ -1,0 +1,16 @@
+.block {
+  height: 80%;
+  width: 90%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  opacity: 0.9;
+  border-radius: 25px;
+
+  .content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}

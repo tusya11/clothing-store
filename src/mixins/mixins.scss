@@ -1,0 +1,10 @@
+@mixin hw($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin flexBox($a, $b, $c) {
+  display: $a;
+  align-items: $b;
+  justify-content: $c;
+}

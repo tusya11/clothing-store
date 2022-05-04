@@ -1,0 +1,68 @@
+.main_content {
+  padding: 10px 24px 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+
+  .block_icon {
+    position: relative;
+
+    .image_icon {
+      height: 60px;
+      width: 60px;
+      padding-left: 40px;
+      margin-right: 25px;
+    }
+
+    .text {
+      font-weight: bold;
+      position: absolute;
+      top: 15px;
+      left: 18px;
+      font-size: 25px;
+    }
+  }
+
+  .block_search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    :global(.MuiPaper-root) {
+      box-shadow: none;
+    }
+  }
+
+  .info_cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text {
+      font-weight: 600;
+      font-size: 16;
+      font-style: normal;
+      margin-right: 20px;
+      text-decoration: none;
+    }
+
+    .text:hover {
+      border-bottom: 1px solid #9f7cff;
+      color: #9f7cff;
+      cursor: pointer;
+      padding-bottom: 5px;
+      transition: 0.3s;
+    }
+  }
+
+  .icons_user {
+    display: flex;
+    .icon {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
+}
