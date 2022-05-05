@@ -1,35 +1,14 @@
+@import "../../../mixins/mixins.scss";
+
 .main_content {
+  @include flexBox(flex, center, space-between);
   padding: 10px 24px 30px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
 
-  .block_icon {
-    position: relative;
-
-    .image_icon {
-      height: 60px;
-      width: 60px;
-      padding-left: 40px;
-      margin-right: 25px;
-    }
-
-    .text {
-      font-weight: bold;
-      position: absolute;
-      top: 15px;
-      left: 18px;
-      font-size: 25px;
-    }
-  }
-
   .block_search {
     flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexBox(flex, center, space-between);
 
     :global(.MuiPaper-root) {
       box-shadow: none;
@@ -37,9 +16,7 @@
   }
 
   .info_cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexBox(flex, center, space-between);
 
     .text {
       font-weight: 600;

@@ -1,0 +1,42 @@
+@import "../../../mixins/mixins.scss";
+
+.content {
+  @include hw(100%, 100%);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .block_icon {
+    position: relative;
+    @include flexBox(flex, center, center);
+    width: 100%;
+    padding: 10px 0;
+
+    .image_icon {
+      @include hw(80px, 80px);
+    }
+
+    .text {
+      font-weight: bold;
+      position: absolute;
+      font-size: 20px;
+      background: linear-gradient(
+        90deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(154, 53, 152, 1) 31%,
+        rgba(253, 29, 29, 1) 60%,
+        rgba(252, 236, 69, 1) 79%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #0b2349;
+    }
+  }
+
+  .content_sidebar {
+    display: flex;
+    padding: 20px;
+    flex: 1;
+  }
+}
