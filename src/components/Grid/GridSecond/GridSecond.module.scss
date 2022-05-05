@@ -1,0 +1,5 @@
+@import "../../../mixins/mixins.scss";
+
+.content {
+  @include hw(100%, 100%);
+}

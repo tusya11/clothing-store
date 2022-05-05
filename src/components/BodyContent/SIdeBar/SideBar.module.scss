@@ -1,0 +1,68 @@
+@import "../../../mixins/mixins.scss";
+
+.main_block {
+  @include hw(100%, 100%);
+  @include flexBox(flex, center, space-between);
+  flex-direction: column;
+
+  .text_block {
+    font-size: 27px;
+    font-weight: bold;
+    font-style: normal;
+    padding: 10px 0;
+  }
+
+  .blocks {
+    @include flexBox(flex, flex-start, center);
+    flex-direction: column;
+
+    .one_block {
+      width: 100%;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding: 10px 5px;
+      cursor: pointer;
+
+      .image {
+        @include hw(20px, 20px);
+        margin: 0 15px;
+      }
+    }
+
+    .text {
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .one_block:hover {
+      width: 100%;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      background: #d4b3f4;
+      color: white;
+      transition: 0.1s;
+    }
+  }
+
+  .block_support {
+    display: flex;
+    width: 100%;
+    padding: 10px 5px;
+
+    img {
+      @include hw(20px, 20px);
+      margin: 0 15px;
+    }
+  }
+
+  .block_support:hover {
+    background: #d4b3f4;
+    border-radius: 20px;
+    transition: 0.1s;
+    color: white;
+  }
+}

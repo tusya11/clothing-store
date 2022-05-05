@@ -12,7 +12,6 @@ export default function CustomizedInputBase() {
         display: "flex",
         alignItems: "center",
         width: 250,
-        marginLeft: "20px",
       }}
     >
       <IconButton
