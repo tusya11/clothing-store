@@ -5,6 +5,11 @@
   @include flexBox(flex, center, space-between);
   flex-direction: column;
 
+  .block_categories {
+    display: flex;
+    flex-direction: column;
+  }
+
   .text_block {
     font-size: 27px;
     font-weight: bold;
@@ -23,20 +28,16 @@
       align-items: center;
       padding: 10px 5px;
       cursor: pointer;
+      margin: 5px 0;
+      box-sizing: border-box;
 
       .image {
         @include hw(20px, 20px);
-        margin: 0 15px;
+        margin: 0 10px;
       }
     }
 
-    .text {
-      font-size: 16px;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .one_block:hover {
+    .block_isClick {
       width: 100%;
       border-radius: 20px;
       display: flex;
@@ -46,12 +47,19 @@
       color: white;
       transition: 0.1s;
     }
+
+    .text {
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+    }
   }
 
   .block_support {
     display: flex;
     width: 100%;
     padding: 10px 5px;
+    cursor: pointer;
 
     img {
       @include hw(20px, 20px);
