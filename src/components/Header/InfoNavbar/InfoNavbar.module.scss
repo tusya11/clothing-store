@@ -17,6 +17,7 @@
 
   .info_cards {
     @include flexBox(flex, center, space-between);
+    margin-left: 15px;
 
     .text {
       font-weight: 600;
@@ -24,14 +25,32 @@
       font-style: normal;
       margin-right: 20px;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .text:hover {
+      color: #9f7cff;
+      cursor: pointer;
+    }
+
+    .text_is_Click {
       border-bottom: 1px solid #9f7cff;
       color: #9f7cff;
       cursor: pointer;
       padding-bottom: 5px;
       transition: 0.3s;
+    }
+
+    .icon_isClick {
+      color: #9f7cff;
+      border-bottom: 1px solid #9f7cff;
+      padding-bottom: 5px;
+      transition: 0.3s;
+    }
+
+    .icons {
+      margin: 0 10px;
+      cursor: pointer;
     }
   }
 

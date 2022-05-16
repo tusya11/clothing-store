@@ -1,13 +1,16 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Layout } from "./pages/Layout/Layout";
+import { Login } from "./pages/Login/Login";
 import "./App.css";
 
-const App = () => (
-  <Router>
+const App = () => {
+  const navigate = useLocation();
+
+  return (
     <div className="App">
-      <Layout />
+      {navigate.pathname.includes("user") ? <Login /> : <Layout />}
     </div>
-  </Router>
-);
+  );
+};
 
 export default App;

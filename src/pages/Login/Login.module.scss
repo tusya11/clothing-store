@@ -1,0 +1,6 @@
+@import "../../mixins/mixins.scss";
+
+.content_sign {
+  width: 50%;
+  @include flexBox(flex, center, center);
+}
