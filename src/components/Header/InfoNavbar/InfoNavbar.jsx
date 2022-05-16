@@ -23,7 +23,11 @@ export const InfoNavbar = () => {
   const params = window.location.pathname;
 
   const getToAnotherPage = (url) => {
-    navigate(`/home/${url}`);
+    if (url === "user") {
+      navigate("/user");
+    } else {
+      navigate(`/home/${url}`);
+    }
 
     setItems((items) =>
       items.map((element) => {

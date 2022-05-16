@@ -1,0 +1,125 @@
+@import "../../mixins/mixins.scss";
+
+.auth {
+  @include hw(100%, 100%);
+  background-color: white;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  .icon_back {
+    @include flexBox(flex, center, flex-start);
+  }
+
+  .content_auth {
+    @include flexBox(flex, center, flex-start);
+    flex-direction: column;
+    box-sizing: border-box;
+
+    .image {
+      width: 40%;
+      border-radius: 20px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .text {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff;
+    }
+
+    .block_text {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-style: normal;
+      margin-top: 1 0px;
+    }
+
+    .block_input {
+      @include flexBox(flex, center, center);
+      flex-direction: column;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 50px;
+
+      .button_add {
+        width: 60%;
+        color: white;
+        @include flexBox(flex, center, center);
+        padding: 15px 20px;
+        margin-top: 20px;
+        border-radius: 30px;
+        box-shadow: 0 14px 28px rgba(194, 188, 188, 0.25),
+          0 10px 10px rgba(130, 127, 127, 0.22);
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .auth_button {
+        background: linear-gradient(to bottom, #f5d0a3, #e263c4);
+      }
+
+      .auth_button:hover {
+        box-shadow: 0 14px 28px rgba(134, 131, 131, 0.25),
+          0 10px 10px rgba(44, 42, 42, 0.22);
+        color: purple;
+      }
+
+      .register_button {
+        color: #c5c2d2;
+        background: #736aca;
+        background: -webkit-linear-gradient(top right, #736aca, #3f279f);
+        background: -moz-linear-gradient(top right, #736aca, #3f279f);
+        background: linear-gradient(to bottom left, #736aca, #3f279f);
+      }
+
+      .register_button:hover {
+        box-shadow: 0 14px 28px rgba(221, 215, 215, 0.25),
+          0 10px 10px rgba(125, 119, 119, 0.22);
+        color: white;
+      }
+
+      .button_login {
+        width: 60%;
+        padding: 15px 20px;
+        box-shadow: 0 0 2rem 0 rgba(207, 47, 222, 0.2);
+        border-radius: 30px;
+        @include flexBox(flex, center, center);
+        position: relative;
+        z-index: 1;
+        background: inherit;
+        overflow: hidden;
+        margin-top: 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .button_login:hover {
+        box-shadow: 0 0 2rem 0 rgba(92, 7, 99, 0.2);
+        color: purple;
+      }
+
+      .button_login:before {
+        content: "";
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 2000px rgba(241, 241, 241, 0.5);
+        filter: blur(10px);
+        margin: -20px;
+      }
+    }
+  }
+}
