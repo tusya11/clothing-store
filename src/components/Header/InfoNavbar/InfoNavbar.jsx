@@ -24,7 +24,13 @@ export const InfoNavbar = () => {
 
   const getToAnotherPage = (url) => {
     if (url === "user") {
-      navigate("/user");
+      const token = localStorage.getItem("token");
+
+      if (token) {
+        navigate("home/user/profile");
+      } else {
+        navigate("/user/sign");
+      }
     } else {
       navigate(`/home/${url}`);
     }

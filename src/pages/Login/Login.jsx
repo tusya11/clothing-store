@@ -26,18 +26,19 @@ export const Login = () => {
   useEffect(() => {
     if (
       location.pathname.includes("user") &&
-      !location.pathname.includes("signup")
+      !location.pathname.includes("signup") &&
+      !location.pathname.includes("profile")
     ) {
-      navigate("/user/signin");
+      navigate("/user/sign/signin");
     }
   }, [location.pathname, navigate]);
 
   const handleLogIn = () => {
-    navigate("/user/signin");
+    navigate("/user/sign/signin");
   };
 
   const handleCreateAccount = () => {
-    navigate("/user/signup");
+    navigate("/user/sign/signup");
   };
 
   const login = () => {
@@ -52,7 +53,7 @@ export const Login = () => {
     <div className={Styles.content_sign}>
       <Routes>
         <Route
-          path="/user/signin"
+          path="/user/sign/signin"
           element={
             <Auth>
               <Form
@@ -66,7 +67,7 @@ export const Login = () => {
           }
         />
         <Route
-          path="/user/signup"
+          path="/user/sign/signup"
           element={
             <SignUp>
               <Form

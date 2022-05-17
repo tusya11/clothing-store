@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {navigate.pathname.includes("user") ? <Login /> : <Layout />}
+      {navigate.pathname.includes("user/sign") ? <Login /> : <Layout />}
     </div>
   );
 };
