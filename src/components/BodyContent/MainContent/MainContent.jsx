@@ -13,6 +13,7 @@ export const MainContent = () => {
         <Route path="/home/likes" element={<div>LIKES</div>} />
         <Route path="/home/basket" element={<div>BASKET</div>} />
         <Route path="/home/likes" element={<div>LIKES</div>} />
+        <Route path="/home/user/profile" element={<div>PROFILE</div>} />
       </Routes>
     </div>
   );

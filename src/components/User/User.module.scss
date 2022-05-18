@@ -1,0 +1,29 @@
+@import "../../mixins/mixins.scss";
+
+.content_username_tag {
+  width: 85%;
+  @include flexBox(flex, center, flex-start);
+
+  .user_name {
+    height: 30px;
+    width: 30%;
+    background-color: #9465c3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+    @include flexBox(flex, center, center);
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .user_name:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    font-weight: 500;
+  }
+
+  .icon {
+    margin-right: 20px;
+  }
+}

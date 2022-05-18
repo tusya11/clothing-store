@@ -9,6 +9,7 @@
   .block_search {
     flex-grow: 1;
     @include flexBox(flex, center, space-between);
+    flex-wrap: wrap;
 
     :global(.MuiPaper-root) {
       box-shadow: none;
