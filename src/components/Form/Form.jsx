@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import { IconButton, InputBase, Paper } from "@mui/material";
@@ -10,6 +9,10 @@ import ImageRegister from "../../images/register.png";
 import Styles from "./Form.module.scss";
 
 export const Form = ({
+  password,
+  userName,
+  setPassword,
+  setUserName,
   props,
   buttonFirstText,
   buttonFirstFunc,
@@ -19,8 +22,6 @@ export const Form = ({
   const { ordinaryText, mainText, tag, backgroundColor } = props;
 
   const navigate = useNavigate();
-  const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
 
   const handleClickBack = () => {
     navigate("/home");
