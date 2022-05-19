@@ -1,0 +1,6 @@
+@import "../../../mixins/mixins.scss";
+
+.profile_content {
+  width: 100%;
+  @include flexBox(flex, flex-start, space-between);
+}

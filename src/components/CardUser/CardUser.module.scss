@@ -1,0 +1,51 @@
+@import "../../mixins/mixins.scss";
+
+.card_user {
+  @include flexBox(flex, center, center);
+  border: 1px solid purple;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #dcc7f1;
+  width: 80%;
+
+  .input {
+    display: none;
+  }
+
+  .content_avatar {
+    @include flexBox(flex, center, center);
+
+    .info_user {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .name {
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .email {
+        color: grey;
+        cursor: pointer;
+        font-weight: 400;
+      }
+    }
+  }
+  .button_add {
+    color: white;
+    background-color: #9465c3;
+    padding: 10px;
+    border-radius: 12px;
+
+    cursor: pointer;
+    @include flexBox(flex, center, center);
+  }
+
+  .button_add:hover {
+    background-color: #6b3a9d;
+  }
+}

@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Profile } from "../../../pages/LayoutPages/Profile/Profile";
 import Styles from "./MainContent.module.scss";
 
 export const MainContent = () => {
@@ -13,7 +14,7 @@ export const MainContent = () => {
         <Route path="/home/likes" element={<div>LIKES</div>} />
         <Route path="/home/basket" element={<div>BASKET</div>} />
         <Route path="/home/likes" element={<div>LIKES</div>} />
-        <Route path="/home/user/profile" element={<div>PROFILE</div>} />
+        <Route path="/home/user/profile" element={<Profile />} />
       </Routes>
     </div>
   );
