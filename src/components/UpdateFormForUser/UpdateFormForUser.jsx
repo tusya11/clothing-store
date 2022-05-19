@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { Button, MenuItem, Select, TextField } from "@mui/material";
 import { validateEmail } from "../../utils/validateEmail";
 import { getError } from "../../redux/actions/indexActions";
 import Styles from "./UpdateFormForUser.module.scss";
@@ -95,18 +95,23 @@ export const UpdateFormForUser = () => {
             marginBottom: "20px",
           }}
         >
-          <TextField
-            id="standard-basic"
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={user.gender}
             label="Gender"
             variant="standard"
-            value={user.gender}
             onChange={(e) =>
               setUser((prev) => {
                 return { ...prev, gender: e.target.value };
               })
             }
-            style={{ width: "40%" }}
-          />
+            style={{ width: "40%", height: "100%", padding: "8px" }}
+          >
+            <MenuItem value={"male"}>male</MenuItem>
+            <MenuItem value={"female"}>female</MenuItem>
+            <MenuItem value={"null"}>i dont know</MenuItem>
+          </Select>
           <TextField
             id="standard-basic"
             label="Phone"
