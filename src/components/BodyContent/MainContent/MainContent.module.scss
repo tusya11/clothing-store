@@ -8,10 +8,16 @@
   flex-direction: column;
   overflow-y: auto;
 
+  .content_cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .block_button {
     width: 100%;
     @include flexBox(flex, center, center);
-    margin-top: 25px;
+    margin: 25px 0;
+    padding: 10px 0;
 
     .button_purchase {
       width: 50%;
