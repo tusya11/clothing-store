@@ -11,5 +11,6 @@
     @include hw(100%, 100%);
     @include flexBox(grid, flex-start, space-between);
     grid-template-columns: 1fr 4fr;
+    max-height: 100%;
   }
 }
