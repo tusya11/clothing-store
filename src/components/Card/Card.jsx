@@ -1,21 +1,40 @@
 import clsx from "clsx";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import useSound from "use-sound";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import likeHeart from "../../sounds/like.mp3";
+import { getProductByID, getProducts } from "../../redux/actions/indexActions";
 import Styles from "./Card.module.scss";
 
-export const Card = ({ card }) => {
+export const Card = ({ card = {} }) => {
+  const dispatch = useDispatch();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { products } = useSelector(({ user }) => user || {});
+
   const [play] = useSound(likeHeart);
   const { title, isLike, img, views, price } = card;
 
   const handleClickHeart = () => {
     play();
-    console.log("fine");
+
+    const filterArray = products.map((element) => {
+      if (element.id === card.id) {
+        return { ...element, isLike: !element.isLike };
+      }
+      return element;
+    });
+
+    dispatch(getProducts(filterArray));
   };
 
   const handleClickProduct = () => {
-    console.log("---lalala");
+    navigate(`${location.pathname}?id=${card?.id}`);
+    dispatch(getProductByID(card));
   };
 
   return (
