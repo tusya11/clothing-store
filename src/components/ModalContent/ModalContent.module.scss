@@ -1,0 +1,120 @@
+@import "../../mixins/mixins.scss";
+
+.content_modal {
+  @include hw(100%, 100%);
+  @include flexBox(flex, center, center);
+
+  .modal {
+    width: 60%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid orange;
+    z-index: 99999;
+    opacity: 1;
+
+    .header_content {
+      @include flexBox(flex, center, space-between);
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .block_name {
+      display: flex;
+      align-items: center;
+    }
+
+    .text_content {
+      font-size: 18px;
+      margin-left: 20px;
+      font-weight: 400;
+    }
+
+    .icon {
+      color: grey;
+      cursor: pointer;
+    }
+
+    .icon_isLike {
+      color: rgb(225, 76, 76);
+    }
+
+    .image_content {
+      @include flexBox(flex, center, center);
+      margin-top: 40px;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    .main_info {
+      width: 100%;
+      @include flexBox(flex, center, space-between);
+      padding: 0 40px;
+      box-sizing: border-box;
+
+      .block_first {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: 500;
+          font-style: normal;
+        }
+      }
+
+      .block_second {
+        display: flex;
+        align-items: center;
+
+        .price {
+          color: orange;
+          font-size: 20px;
+          font-weight: 500;
+          font-style: normal;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+
+      .title_block {
+        font-size: 20px;
+        font-weight: 500;
+        color: orange;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+
+    .button_purchase {
+      width: 50%;
+      background-color: orange;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}
