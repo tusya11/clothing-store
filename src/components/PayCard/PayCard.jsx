@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Styles from "./PayCard.module.scss";
 
-export const PayCard = ({ products }) => {
+export const PayCard = ({ products = [] }) => {
   const [startSum, setStartSum] = useState(0);
   const [endSum, setEndSum] = useState(0);
   const [discount, setDiscount] = useState(0);

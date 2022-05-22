@@ -5,7 +5,12 @@ import useSound from "use-sound";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import likeHeart from "../../sounds/like.mp3";
-import { getProductByID, getProducts } from "../../redux/actions/indexActions";
+import {
+  getError,
+  getProductByID,
+  getProducts,
+} from "../../redux/actions/indexActions";
+import { isAuth } from "../../utils/isAuth";
 import Styles from "./Card.module.scss";
 
 export const Card = ({ card = {} }) => {
@@ -20,16 +25,26 @@ export const Card = ({ card = {} }) => {
   const { title, isLike, img, views, price } = card;
 
   const handleClickHeart = () => {
-    play();
+    if (isAuth()) {
+      play();
 
-    const filterArray = products.map((element) => {
-      if (element.id === card.id) {
-        return { ...element, isLike: !element.isLike };
-      }
-      return element;
-    });
+      const filterArray = products.map((element) => {
+        if (element.id === card.id) {
+          return { ...element, isLike: !element.isLike };
+        }
+        return element;
+      });
 
-    dispatch(getProducts(filterArray));
+      dispatch(getProducts(filterArray));
+    } else {
+      dispatch(
+        getError({
+          status: "info",
+          message: "You need to log in to perform this action!",
+          flag: true,
+        })
+      );
+    }
   };
 
   const handleClickProduct = () => {

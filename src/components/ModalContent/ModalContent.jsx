@@ -7,7 +7,12 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Button } from "@mui/material";
 import likeHeart from "../../sounds/like.mp3";
 import { Rating } from "../Rating/Rating";
-import { getProducts } from "../../redux/actions/indexActions";
+import {
+  addItem,
+  getError,
+  getProducts,
+} from "../../redux/actions/indexActions";
+import { isAuth } from "../../utils/isAuth";
 import Styles from "./ModalContent.module.scss";
 
 export const ModalContent = ({ product, setModalOpen }) => {
@@ -20,15 +25,25 @@ export const ModalContent = ({ product, setModalOpen }) => {
   const [play] = useSound(likeHeart);
 
   const handleClickHeart = () => {
-    play();
-    const filterArray = products?.map((element) => {
-      if (element.id === product.id) {
-        return { ...element, isLike: !element.isLike };
-      }
-      return element;
-    });
+    if (isAuth()) {
+      play();
+      const filterArray = products?.map((element) => {
+        if (element.id === product.id) {
+          return { ...element, isLike: !element.isLike };
+        }
+        return element;
+      });
 
-    dispatch(getProducts(filterArray));
+      dispatch(getProducts(filterArray));
+    } else {
+      dispatch(
+        getError({
+          status: "info",
+          message: "You need to log in to perform this action!",
+          flag: true,
+        })
+      );
+    }
   };
 
   const handleClickBack = () => {
@@ -37,7 +52,17 @@ export const ModalContent = ({ product, setModalOpen }) => {
   };
 
   const handleAddItem = () => {
-    console.log("add new item");
+    if (isAuth()) {
+      dispatch(addItem(product));
+    } else {
+      dispatch(
+        getError({
+          status: "info",
+          message: "You need to log in to perform this action!",
+          flag: true,
+        })
+      );
+    }
   };
 
   return (

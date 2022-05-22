@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsCartCheck } from "react-icons/bs";
 import { BiHeart } from "react-icons/bi";
-import CustomizedInputBase from "../../InputBase/InputBase";
+// import CustomizedInputBase from "../../InputBase/InputBase";
 import Styles from "./InfoNavbar.module.scss";
 
 export const InfoNavbar = () => {
@@ -13,7 +13,7 @@ export const InfoNavbar = () => {
     { title: "Women", flag: "women", isClick: false, id: 2 },
     { title: "Men", flag: "men", isClick: false, id: 3 },
     { title: "Best Seller", flag: "best", isClick: false, id: 4 },
-    { title: "About us", flag: "about", isClick: false, id: 5 },
+    // { title: "About us", flag: "about", isClick: false, id: 5 },
     { title: "", tag: "BiHeart", flag: "likes", isClick: false, id: 6 },
     { title: "", tag: "GrBasket", flag: "basket", isClick: false, id: 7 },
     { title: "", tag: "AiOutlineUser", flag: "user", isClick: false, id: 8 },
@@ -96,7 +96,7 @@ export const InfoNavbar = () => {
   return (
     <div className={Styles.main_content}>
       <div className={Styles.block_search}>
-        <CustomizedInputBase />
+        {/* <CustomizedInputBase /> */}
         <div className={Styles.info_cards}>
           {items.map(({ title, flag, isClick, id, tag }) => (
             <div key={id}>

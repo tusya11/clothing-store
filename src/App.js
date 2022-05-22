@@ -33,9 +33,11 @@ const App = () => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
+    const users = JSON.parse(localStorage.getItem("users"));
 
     if (user?.id) {
       dispatch(getUser(user));
+      localStorage.setItem("users", JSON.stringify([...users, user]));
     }
   }, [dispatch]);
 
@@ -55,7 +57,14 @@ const App = () => {
 
   useEffect(() => {
     dispatch({ type: "GET_PRODUCTS" });
+    dispatch({ type: "GET_USERS" });
   }, [dispatch]);
+
+  useEffect(() => {
+    if (products?.length > 0) {
+      localStorage.setItem("products", JSON.stringify(products));
+    }
+  }, [products]);
 
   return (
     <div className="App">
