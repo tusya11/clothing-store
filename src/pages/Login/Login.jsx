@@ -79,8 +79,6 @@ export const Login = () => {
   };
 
   const register = () => {
-    const users = JSON.parse(localStorage.getItem("users"));
-
     if (!password) {
       dispatch(
         getError({

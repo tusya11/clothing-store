@@ -10,9 +10,7 @@ export const CardUser = () => {
 
   const { user } = useSelector(({ user }) => user || {});
 
-  const [isChange, setIsChange] = useState(false);
   const [file, setFile] = useState(null);
-  const [nameUser, setNameUser] = useState("");
 
   const cropperRef = useRef();
 
@@ -24,16 +22,6 @@ export const CardUser = () => {
     };
     dispatch(getUser({ ...user, img: URL.createObjectURL(e.target.files[0]) }));
   };
-
-  // const handleDoubleClick = () => {
-  //   setIsChange(true);
-  //   console.log("---lol");
-  // };
-
-  // const handleBlur = () => {
-  //   dispatch(getUser({ ...user, name: nameUser }));
-  //   setIsChange(false);
-  // };
 
   return (
     <div className={Styles.card_user}>
@@ -51,20 +39,6 @@ export const CardUser = () => {
           }}
         />
         <div className={Styles.info_user}>
-          {/* {!isChange ? (
-            <span
-              className={Styles.name}
-              onDoubleClick={handleDoubleClick}
-              onBlur={handleBlur}
-            >
-              {user.name ? user.name : "NAME"}
-            </span>
-          ) : (
-            <input
-              onBlur={handleBlur}
-              onChange={({ value }) => setNameUser(value)}
-            />
-          )} */}
           <span className={Styles.email}>{user.email}</span>
         </div>
       </div>
