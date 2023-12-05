@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Layout } from "./pages/Layout/Layout";
 import { Login } from "./pages/Login/Login";
 import { User } from "./components/User/User";
+import { ModalContent } from "./components/ModalContent/ModalContent";
 import { AlertMessage } from "./components/Alert/Alert";
 import { ModalContent } from "./components/ModalContent/ModalContent";
 import {

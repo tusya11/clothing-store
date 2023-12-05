@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Button, MenuItem, Select, TextField } from "@mui/material";
 import { validateEmail } from "../../utils/validateEmail";
 import { getError } from "../../redux/actions/indexActions";
 import Styles from "./UpdateFormForUser.module.scss";
 
-export const UpdateFormForUser = () => {
+export const UpdateFormForUser = ({ user, setUser }) => {
   const dispatch = useDispatch();
-
-  const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    gender: "",
-    phone: "",
-  });
 
   const handleChangeInfoUser = () => {
     const checkEmail = validateEmail(user.email);
@@ -37,7 +29,7 @@ export const UpdateFormForUser = () => {
     if (user_info && Object?.keys(user_info)?.length !== 0) {
       setUser(user_info);
     }
-  }, []);
+  }, [setUser]);
 
   return (
     <div className={Styles.container}>

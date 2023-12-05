@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar } from "@mui/material";
 import ImageIcon from "@mui/icons-material/Image";
@@ -25,15 +25,15 @@ export const CardUser = () => {
     dispatch(getUser({ ...user, img: URL.createObjectURL(e.target.files[0]) }));
   };
 
-  const handleDoubleClick = () => {
-    setIsChange(true);
-    console.log("---lol");
-  };
+  // const handleDoubleClick = () => {
+  //   setIsChange(true);
+  //   console.log("---lol");
+  // };
 
-  const handleBlur = () => {
-    dispatch(getUser({ ...user, name: nameUser }));
-    setIsChange(false);
-  };
+  // const handleBlur = () => {
+  //   dispatch(getUser({ ...user, name: nameUser }));
+  //   setIsChange(false);
+  // };
 
   return (
     <div className={Styles.card_user}>
@@ -51,7 +51,7 @@ export const CardUser = () => {
           }}
         />
         <div className={Styles.info_user}>
-          {!isChange ? (
+          {/* {!isChange ? (
             <span
               className={Styles.name}
               onDoubleClick={handleDoubleClick}
@@ -64,7 +64,7 @@ export const CardUser = () => {
               onBlur={handleBlur}
               onChange={({ value }) => setNameUser(value)}
             />
-          )}
+          )} */}
           <span className={Styles.email}>{user.email}</span>
         </div>
       </div>

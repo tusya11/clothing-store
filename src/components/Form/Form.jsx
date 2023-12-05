@@ -100,6 +100,7 @@ export const Form = ({
               inputProps={{ "aria-label": "password" }}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              type="password"
             />
           </Paper>
           <span
