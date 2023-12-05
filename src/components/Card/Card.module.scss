@@ -1,1 +1,72 @@
 @import "../../mixins/mixins.scss";
+
+.cards {
+  padding: 10px;
+  border-radius: 10px;
+  @include flexBox(flex, center, center);
+  flex-direction: column;
+  width: 150px;
+  margin: 15px 10px;
+  background-color: white;
+  cursor: pointer;
+
+  .icon {
+    @include flexBox(flex, center, flex-end);
+    width: 100%;
+    color: grey;
+  }
+
+  .block_content {
+    flex-direction: column;
+    width: 100%;
+    @include flexBox(flex, center, center);
+  }
+
+  .icon_isLike {
+    color: rgb(225, 76, 76);
+  }
+
+  .img_product {
+    @include hw(100px, 100px);
+    border-radius: 10px;
+  }
+
+  .block_text {
+    @include flexBox(flex, center, flex-start);
+    flex-direction: column;
+    margin-top: 10px;
+
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .icon_star {
+      @include flexBox(flex, center, center);
+      margin: 7px 0;
+      width: 100%;
+
+      .icon_icon {
+        color: orange;
+        margin-right: 6px;
+      }
+
+      .text {
+        color: grey;
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+      }
+    }
+
+    .price {
+      color: orange;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+.cards:hover {
+  transform: scale(1.05);
+}

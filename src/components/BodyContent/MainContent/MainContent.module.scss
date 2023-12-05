@@ -1,5 +1,31 @@
+@import "../../../mixins/mixins.scss";
+
 .content_magazine {
   width: 100%;
   flex-grow: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  .content_cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .block_button {
+    width: 100%;
+    @include flexBox(flex, center, center);
+    margin: 25px 0;
+    padding: 10px 0;
+
+    .button_purchase {
+      width: 50%;
+      background-color: orange;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 30px;
+    }
+  }
 }

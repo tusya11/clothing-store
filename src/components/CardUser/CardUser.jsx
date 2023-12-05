@@ -11,7 +11,7 @@ export const CardUser = () => {
   const { user } = useSelector(({ user }) => user || {});
 
   const [isChange, setIsChange] = useState(false);
-  // const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [nameUser, setNameUser] = useState("");
 
   const cropperRef = useRef();
@@ -19,9 +19,9 @@ export const CardUser = () => {
   const apply = async (e) => {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(e.target.files[0]);
-    // fileReader.onloadend = () => {
-    //   setFile(fileReader.result);
-    // };
+    fileReader.onloadend = () => {
+      setFile(fileReader.result);
+    };
     dispatch(getUser({ ...user, img: URL.createObjectURL(e.target.files[0]) }));
   };
 

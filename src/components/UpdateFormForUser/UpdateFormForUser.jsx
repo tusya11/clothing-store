@@ -34,7 +34,7 @@ export const UpdateFormForUser = () => {
   useEffect(() => {
     const user_info = JSON.parse(localStorage.getItem("info"));
 
-    if (Object.keys(user_info).length !== 0) {
+    if (user_info && Object?.keys(user_info)?.length !== 0) {
       setUser(user_info);
     }
   }, []);

@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Auth } from "../../pages/Login/Auth/Auth";
 import { Form } from "../../components/Form/Form";
 import { SignUp } from "../../pages/Login/SignUp/SignUp";
 import { validateEmail } from "../../utils/validateEmail";
-import { generateID } from "../../utils/generateID";
-import { getError, getUser } from "../../redux/actions/indexActions";
+import { getError } from "../../redux/actions/indexActions";
 import Styles from "./Login.module.scss";
 
 export const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
@@ -42,6 +43,15 @@ export const Login = () => {
     }
   }, [location.pathname, navigate]);
 
+  useEffect(() => {
+    if (Object.keys(user).length > 0) {
+      if (user.token) {
+        localStorage.setItem("token", user.token);
+        navigate("/home/main");
+      }
+    }
+  }, [user, navigate]);
+
   const handleLogIn = () => {
     setPassword("");
     setUserName("");
@@ -55,7 +65,17 @@ export const Login = () => {
   };
 
   const login = () => {
-    console.log("Дальнейшие шаги по авторизации - запрос на бэк");
+    if (validateEmail(userName)?.input) {
+      dispatch({ type: "LOGIN", payload: { email: userName, password } });
+    } else {
+      dispatch(
+        getError({
+          status: "error",
+          message: "Incorrect email! Please re-enter",
+          flag: true,
+        })
+      );
+    }
   };
 
   const register = () => {
@@ -70,23 +90,7 @@ export const Login = () => {
     }
 
     if (validateEmail(userName)?.input) {
-      dispatch(
-        getUser({
-          id: generateID(101, 32023),
-          email: userName,
-          password: password,
-        })
-      );
-      navigate("/home");
-      localStorage.setItem("token", generateID(101, 32023));
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          id: generateID(101, 32023),
-          email: userName,
-          password: password,
-        })
-      );
+      dispatch({ type: "SIGN_UP", payload: { email: userName, password } });
     } else {
       dispatch(
         getError({
