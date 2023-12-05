@@ -6,7 +6,6 @@ import { Login } from "./pages/Login/Login";
 import { User } from "./components/User/User";
 import { ModalContent } from "./components/ModalContent/ModalContent";
 import { AlertMessage } from "./components/Alert/Alert";
-import { ModalContent } from "./components/ModalContent/ModalContent";
 import {
   getError,
   getProductByID,
