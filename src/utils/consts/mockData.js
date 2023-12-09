@@ -1,5 +1,17 @@
 export const mockData = [
   {
+    id: 2314,
+    title: "Юбка женская",
+    tag: ["home", "women"],
+    views: 1234,
+    price: 150,
+    img: "https://cdn.laredoute.com/products/8/6/c/86c26e1afbc328ac2be5c8681c85270f.jpg?width=1200&dpr=1",
+    isLike: false,
+    rating: 4.5,
+    description:
+      "Восхитительная разлетающаяся юбка с красивой отделкой воланами. Асимметричный покрой придает ей стиль и характер. Идеальная юбка в романтическом или богемном стиле для лета.",
+  },
+  {
     id: 1,
     title: "Wooden Cafe Table",
     tag: ["home", "best"],
